@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clickclick game</title>
+    <link rel="stylesheet" href="clickclick.css">
+</head>
+
+<body>
+    <div class="wapper">
+        <div class="box">
+            <div class="box1">
+                <span></span>
+                <!-- <a href="">Clear</a> -->
+                <h2>𝕿𝖎𝖐 𝕿𝖎𝖐 <span>𓃲</span> </h2>
+                <button>clear</button>
+            </div>
+            <div class="box2">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let box2 = document.querySelector('.box2')
+        let span = document.querySelector('.box1 span')
+        let button = document.querySelector('.box1 button')
+        box2.onmousemove = (e) => {
+            let x = e.offsetX;
+            let y = e.offsetY;
+            span.innerHTML = x + "," + y;
+        }
+        box2.onclick=(e)=>{
+            let div=document.createElement('div')
+            div.classList.add('dot')
+            div.style.left=e.offsetX-Number(5)+'px'
+            div.style.top=e.offsetY-Number(5)+'px'
+            box2.append(div)
+        }
+        button.onclick=(e)=>{
+            span.innerHTML=''
+            box2.innerHTML=''
+
+        }
+    </script>
+</body>
+
+</html>
